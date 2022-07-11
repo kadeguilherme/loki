@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  web-site:
+    image: kadeguilherme/gerador-log:latest
+    ports:
+      - 3000:3000
+    volumes:
+      - ./logs:/logs
+    environment:
+      LOG_FILE: /logs/app.log
