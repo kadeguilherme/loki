@@ -1,5 +1,9 @@
 version: '3'
 
+networks:
+  loki:
+    driver: bridge
+
 services:
   web-site:
     image: kadeguilherme/gerador-log:latest
@@ -8,4 +12,23 @@ services:
     volumes:
       - ./logs:/logs
     environment:
-      LOG_FILE: /logs/app.log
+      LOG_FILE: ./logs/app.log
+  
+  loki:
+    image: grafana/loki:2.5.0
+    command: 
+      - -config.file=/etc/loki/local-config.yaml
+      - -print-config-stderr=true
+    networks:
+      - loki
+    
+  promtail:
+    image: grafana/promtail:2.5.0
+    command: -config.file=/etc/promtail/config.yml
+    depends_on:
+      - loki
+      - web-site
+    networks:
+      - loki
+    ports:
+      - 9080:9080
