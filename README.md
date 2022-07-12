@@ -28,7 +28,8 @@ $ docker-compose up
   <img src="https://github.com/kadeguilherme/loki/blob/main/grafana.png" alt="Card-01">
   </td>
 </table>
-
+## Arquitetura do Projeto
+<img src="https://github.com/kadeguilherme/loki/blob/main/Arquitetura%20gerador%20de%20log%20-%20Loki.png" alt="Card-01">
 
 
 ## Feito com ❤
