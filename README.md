@@ -14,7 +14,7 @@ O projeto tem finalidade de simula uma aplicaçao que gere logs.
 # Clone do repositório
 $ git clone https://github.com/kadeguilherme/loki.git
 
-# executar o comando dentro da pasta Loki 
+# Executar o comando dentro da pasta /Loki 
 $ docker-compose up
 
 # Portas 
