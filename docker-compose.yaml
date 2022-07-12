@@ -35,3 +35,12 @@ services:
     volumes: 
       - ./logs:/logs
       - ./config.yaml:/etc/promtail/config.yaml
+  
+  grafana:
+    image: grafana/grafana:9.0.1
+    ports:
+      - "5000:3000"
+    depends_on:
+      - loki
+    networks:
+      - loki
